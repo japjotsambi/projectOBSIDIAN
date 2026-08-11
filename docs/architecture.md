@@ -14,7 +14,7 @@ OBSIDIAN is built around a single security principle: **the host can use secret 
 │          (STM32 / RP2040)       │                    │      (Hardware Key Vault)       │
 │                                 │                    │                                 │
 │  ┌───────────────────────────┐  │                    │  ┌───────────────────────────┐  │
-│  │      ML-KEM Library       │  │                    │  │       SPI Slave           │  │
+│  │      ML-KEM Library       │  │                    │  │       SPI Peripheral           │  │
 │  │   (pqm4 / liboqs)         │  │                    │  │                           │  │
 │  └───────────────────────────┘  │                    │  └───────────────────────────┘  │
 │              │                  │                    │              │                  │
@@ -69,7 +69,7 @@ The SPI bus is the trust boundary. Everything on the MCU side is considered pote
 
 | Component | Role |
 |-----------|------|
-| SPI slave | Receives command bytes, returns response bytes; handles clock-domain crossing |
+| SPI peripheral | Receives command bytes, returns response bytes; handles clock-domain crossing |
 | Register interface | Decodes commands and addresses; routes reads/writes |
 | Access control | Gates secret-key access behind the unlock sequence; runs the auto-lock timer, failed-attempt counter, and zeroization trigger |
 | Key storage | Block RAM holding public keys, secret keys, ciphertext, and shared secrets |

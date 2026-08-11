@@ -8,7 +8,7 @@ This document defines the SPI command/response protocol and register map used be
 
 | Parameter | Value |
 |-----------|-------|
-| Role | MCU = SPI master, FPGA = SPI slave |
+| Role | MCU = SPI controller, FPGA = SPI peripheral |
 | Bit order | MSB first |
 | Word size | 8 bits |
 | Mode | Mode 0 (CPOL = 0, CPHA = 0) by default — confirm both sides agree |

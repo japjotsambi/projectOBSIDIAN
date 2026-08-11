@@ -32,7 +32,7 @@ OBSIDIAN splits responsibilities across two devices connected over SPI:
 ```
         UART                          SPI
 Terminal ───► Microcontroller  ◄───────────────►  FPGA (key vault)
-              • ML-KEM ops                         • SPI slave
+              • ML-KEM ops                         • SPI peripheral
               • key manager                         • register interface
               • access policy                       • access control
               • SPI driver                          • protected key storage
@@ -66,7 +66,7 @@ ML-KEM is a key encapsulation mechanism — it establishes shared secrets for co
 ```
 obsidian/
 ├── fpga/
-│   ├── src/            # Verilog: spi_slave, register_interface, access_control, key_storage
+│   ├── src/            # Verilog: spi_peripheral, register_interface, access_control, key_storage
 │   ├── sim/            # Testbenches
 │   └── constraints/    # Board pin constraints (.xdc)
 ├── firmware/
@@ -200,7 +200,7 @@ Measured on `<MCU / clock speed>` — to be filled in.
 
 ## Roadmap / Status
 
-- [ ] FPGA SPI slave + register interface
+- [ ] FPGA SPI peripheral + register interface
 - [ ] Protected key storage + access control
 - [ ] Zeroization engine
 - [ ] MCU bare-metal SPI driver
@@ -218,7 +218,7 @@ Measured on `<MCU / clock speed>` — to be filled in.
 - NIST FIPS 203 — ML-KEM (Module-Lattice Key-Encapsulation Mechanism)
 - [pqm4](https://github.com/mupq/pqm4) — post-quantum crypto for ARM Cortex-M
 - [liboqs](https://github.com/open-quantum-safe/liboqs) — Open Quantum Safe library
-- [Nandland SPI Slave in Verilog](https://nandland.com/spi-slave-verilog/)
+- [Nandland SPI Peripheral in Verilog](https://nandland.com/spi-slave-verilog/)
 
 ---
 

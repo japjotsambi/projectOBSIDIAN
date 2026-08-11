@@ -30,7 +30,7 @@ A two-device key-management system in which a microcontroller (MCU) performs ML-
 
 ## 6. How it works (brief)
 
-MCU ↔ SPI ↔ FPGA. FPGA modules: SPI slave, register interface, access control (unlock / lock / auto-lock / fail-counter), protected key storage, and a zeroization engine. Full detail in `docs/architecture.md` and `docs/protocol.md`.
+MCU ↔ SPI ↔ FPGA. FPGA modules: SPI peripheral, register interface, access control (unlock / lock / auto-lock / fail-counter), protected key storage, and a zeroization engine. Full detail in `docs/architecture.md` and `docs/protocol.md`.
 
 ## 7. Candidate novel / inventive aspects (to be assessed — not yet claimed)
 
